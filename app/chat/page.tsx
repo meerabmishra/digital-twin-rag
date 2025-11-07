@@ -34,14 +34,8 @@ export default function ChatPage() {
       if (response.ok && data.success) {
         setIsInitialized(true);
       } else {
-        const errorMsg = data.details || data.error || 'Failed to initialize vector database';
-        if (errorMsg.includes('quota') || errorMsg.includes('429')) {
-          setInitError('OpenAI API quota exceeded. Please add credits to your OpenAI account at https://platform.openai.com/account/billing');
-        } else if (errorMsg.includes('API key')) {
-          setInitError('Invalid OpenAI API key. Please check your .env.local file.');
-        } else {
-          setInitError(errorMsg);
-        }
+        const errorMsg = data.details || data.error || data.message || 'Failed to initialize vector database';
+        setInitError(errorMsg);
       }
     } catch (error: any) {
       setInitError(`Initialization error: ${error.message || 'Unknown error'}`);
@@ -129,20 +123,42 @@ export default function ChatPage() {
             <div className="bg-red-50 dark:bg-red-900/30 border-l-4 border-red-500 p-4 m-4">
               <div className="flex items-center">
                 <AlertCircle className="h-5 w-5 text-red-500 mr-2" />
-                <p className="text-red-700 dark:text-red-300">{initError}</p>
+                <div>
+                  <p className="text-red-700 dark:text-red-300 font-semibold">Initialization Error</p>
+                  <p className="text-sm text-red-600 dark:text-red-400 mt-1">{initError}</p>
+                  {initError.includes('quota') && (
+                    <p className="text-xs text-red-500 dark:text-red-400 mt-2">
+                      Vercel AI Gateway provides $5/day in free credits. The quota may have been reached.
+                    </p>
+                  )}
+                </div>
               </div>
-              <p className="text-sm text-red-600 dark:text-red-400 mt-2">
-                Run: <code className="bg-red-100 dark:bg-red-900 px-2 py-1 rounded">docker run -p 8000:8000 chromadb/chroma</code>
-              </p>
             </div>
           )}
 
           {!isInitialized && !initError && (
             <div className="bg-blue-50 dark:bg-blue-900/30 border-l-4 border-blue-500 p-4 m-4">
-              <div className="flex items-center">
-                <Loader2 className="h-5 w-5 text-blue-500 mr-2 animate-spin" />
-                <p className="text-blue-700 dark:text-blue-300">Initializing vector database...</p>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center">
+                  <Loader2 className="h-5 w-5 text-blue-500 mr-2 animate-spin" />
+                  <p className="text-blue-700 dark:text-blue-300">Initializing vector database with Vercel AI Gateway...</p>
+                </div>
               </div>
+              <p className="text-xs text-blue-600 dark:text-blue-400 mt-2 ml-7">
+                This may take 20-30 seconds. Processing embeddings for your profile...
+              </p>
+            </div>
+          )}
+
+          {initError && (
+            <div className="mt-4 mx-4">
+              <button
+                onClick={initializeDB}
+                className="w-full bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition flex items-center justify-center"
+              >
+                <Brain className="h-5 w-5 mr-2" />
+                Retry Initialization
+              </button>
             </div>
           )}
 
