@@ -2,9 +2,13 @@ import 'server-only';
 import { openai } from '@ai-sdk/openai';
 import { embed, embedMany, generateText } from 'ai';
 
-// Vercel AI Gateway provides $5/day in free credits when deployed on Vercel
-// No OpenAI API key required! Gateway automatically handles authentication.
-const OPENAI_API_KEY = process.env.OPENAI_API_KEY || 'vercel-ai-gateway';
+// OpenAI API key is required
+// Vercel AI Gateway helps with rate limiting and monitoring, but you still need an API key
+const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+
+if (!OPENAI_API_KEY) {
+  console.error('OPENAI_API_KEY is not set. Please add it to your environment variables.');
+}
 
 // In-memory vector storage
 interface Document {
@@ -17,8 +21,11 @@ interface Document {
 let documents: Document[] = [];
 
 // Generate embedding using Vercel AI SDK
-// Automatically uses AI Gateway when deployed on Vercel
 async function generateEmbedding(text: string): Promise<number[]> {
+  if (!OPENAI_API_KEY) {
+    throw new Error('OpenAI API key is required. Please add OPENAI_API_KEY to your Vercel environment variables.');
+  }
+
   try {
     const { embedding } = await embed({
       model: openai.embedding('text-embedding-3-small'),
@@ -30,7 +37,7 @@ async function generateEmbedding(text: string): Promise<number[]> {
     console.error('Embedding error:', error);
     
     if (error.message?.includes('quota') || error.message?.includes('429')) {
-      throw new Error('Daily AI Gateway quota reached ($5/day). Try again tomorrow or add your own OpenAI API key.');
+      throw new Error('OpenAI API quota exceeded. Please check your billing at https://platform.openai.com/account/billing');
     }
     
     throw new Error(`Failed to generate embedding: ${error.message}`);
@@ -189,14 +196,20 @@ Answer:`,
 export async function initializeVectorDB(docs: { content: string; metadata: any }[]) {
   if (documents.length === 0) {
     console.log('Initializing vector database with Vercel AI SDK...');
-    console.log('Using Vercel AI Gateway ($5/day free credits when deployed)');
     console.log(`Processing ${docs.length} documents...`);
+    
+    if (!OPENAI_API_KEY) {
+      return { 
+        success: false, 
+        message: 'OpenAI API key is required. Please add OPENAI_API_KEY to your Vercel environment variables at: Project Settings > Environment Variables' 
+      };
+    }
     
     try {
       await addDocuments(docs);
       return { 
         success: true, 
-        message: `Successfully initialized with ${documents.length} documents using Vercel AI Gateway` 
+        message: `Successfully initialized with ${documents.length} documents using Vercel AI SDK` 
       };
     } catch (error: any) {
       console.error('Initialization error:', error);
@@ -205,7 +218,12 @@ export async function initializeVectorDB(docs: { content: string; metadata: any 
       if (error.message?.includes('quota') || error.message?.includes('429')) {
         return { 
           success: false, 
-          message: 'Daily AI Gateway quota reached ($5/day). Try again tomorrow or add your own OpenAI API key.' 
+          message: 'OpenAI API quota exceeded. Please add credits at https://platform.openai.com/account/billing' 
+        };
+      } else if (error.message?.includes('API key')) {
+        return { 
+          success: false, 
+          message: 'Invalid OpenAI API key. Please check your OPENAI_API_KEY environment variable in Vercel.' 
         };
       }
       
