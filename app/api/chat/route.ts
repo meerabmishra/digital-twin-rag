@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { generateRAGResponse } from '@/lib/rag-demo';
+import { generateRAGResponse } from '@/lib/rag-vercel';
 
 export async function POST(request: NextRequest) {
   try {

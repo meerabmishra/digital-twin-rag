@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { initializeVectorDB } from '@/lib/rag-demo';
+import { initializeVectorDB } from '@/lib/rag-vercel';
 import { profileDocuments } from '@/lib/profile-data';
 
 export async function POST(request: NextRequest) {

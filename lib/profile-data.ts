@@ -9,161 +9,151 @@ export interface STARProfile {
 }
 
 export const professionalProfile = {
-  name: "Meera",
-  title: "AI Agent Developer",
-  summary: "Experienced AI Agent Developer specializing in full-stack development with Next.js 15, React 19, and advanced RAG systems. Proven track record in building production-ready AI applications with MCP server integration, enterprise authentication, and professional deployment strategies.",
+  name: "Meera Mishra",
+  title: "Frontend-Focused Full-Stack Developer",
+  location: "Manor Lakes, Melbourne, VIC 3024",
+  email: "meerabmishra102@gmail.com",
+  phone: "0414 159 070",
+  linkedin: "https://www.linkedin.com/in/meera-mishra",
+  
+  summary: "Frontend-focused Full-Stack Developer with 3+ years of experience in designing and building responsive, scalable, and user-friendly web applications. Skilled in React.js, Next.js, TypeScript, JavaScript, HTML5, CSS3, Tailwind, Material UI, and SQL. Adept at creating modern, reusable UI components, optimizing performance, and collaborating in Agile teams. Experienced in designing wireframes and prototypes in Figma and building seamless UI/UX from concept to deployment.",
   
   skills: {
     technical: [
-      "Next.js 15 & React 19",
-      "TypeScript & JavaScript",
-      "AI/ML Integration (OpenAI, RAG Systems)",
-      "MCP (Model Context Protocol) Servers",
-      "Vector Databases (ChromaDB)",
-      "Database Management (Prisma ORM, PostgreSQL)",
-      "Authentication (Auth.js, OAuth)",
-      "Cloud Deployment (Vercel, AWS)",
-      "GitHub & Version Control",
-      "VS Code & Development Tools"
+      "JavaScript (ES6+)",
+      "TypeScript",
+      "HTML5",
+      "CSS3",
+      "React.js",
+      "Next.js",
+      "Redux",
+      "Tailwind CSS",
+      "Material UI",
+      "Figma (Wireframing, Prototyping)",
+      "SQL Server",
+      "MySQL",
+      "Power BI",
+      "RESTful APIs",
+      "Jest",
+      "Cypress",
+      "React Testing Library",
+      "Git & GitHub",
+      "Visual Studio Code",
+      "Postman"
     ],
     soft: [
       "Problem Solving",
-      "Technical Communication",
-      "Project Management",
-      "Continuous Learning",
       "Team Collaboration",
+      "Agile Development",
+      "UI/UX Design",
+      "Technical Communication",
+      "Code Review",
+      "Performance Optimization",
       "Attention to Detail"
     ]
   },
 
   education: [
     {
-      degree: "AI Agent Developer Certification",
-      institution: "AI Agents Workshop Series",
-      year: "2025",
-      description: "Comprehensive 10-week program covering full-stack AI development, MCP servers, RAG systems, and enterprise deployment"
+      degree: "Bachelor of Technology in Computer Science",
+      institution: "Jain University, Bangalore, India",
+      year: "2017-2021",
+      description: "Graduated with 89.03% - Strong foundation in computer science fundamentals, web development, and software engineering"
     }
   ],
 
   starExperiences: [
     {
-      situation: "Needed to create an intelligent professional assistant that could respond to recruiter queries about career experience and technical skills in a natural, accurate way",
-      task: "Design and implement a production-ready RAG (Retrieval-Augmented Generation) system that serves as a digital twin for professional interactions",
+      situation: "Tassie Solar needed streamlined operations management and data visualization for solar project delivery teams",
+      task: "Manage scheduling, documentation, communication, and create performance dashboards for project tracking",
       action: [
-        "Architected comprehensive RAG system using Next.js 15 and React 19",
-        "Implemented vector embeddings using OpenAI API for semantic search capabilities",
-        "Integrated ChromaDB as vector database for efficient document storage and retrieval",
-        "Structured professional data using STAR methodology for optimal AI retrieval",
-        "Created intelligent query processing system with context-aware responses",
-        "Developed comprehensive testing suite with 20+ recruiter-style queries",
-        "Optimized embedding generation and search quality through iterative refinement",
-        "Built user-friendly interface for real-time professional query interactions"
+        "Managed scheduling and documentation for project delivery teams",
+        "Used Microsoft Excel and Word for reporting and operational tracking",
+        "Facilitated virtual meetings using Microsoft Teams and Zoom",
+        "Created Power BI dashboards to track and visualize operational performance",
+        "Coordinated team activities and managed project timelines",
+        "Improved communication workflows between teams",
+        "Maintained documentation standards across projects"
       ],
-      result: "Successfully deployed a fully functional Digital Twin RAG system capable of accurately responding to complex career queries, demonstrating 95%+ accuracy in recruiter-style interactions and providing a professional AI assistant ready for real-world recruiting scenarios",
-      category: "AI & RAG Development",
-      keywords: ["RAG", "AI", "Vector Embeddings", "Semantic Search", "OpenAI", "ChromaDB", "Next.js"]
+      result: "Improved operational efficiency through data visualization and streamlined processes, gaining valuable experience in team coordination and project management transferable to Agile software development environments",
+      category: "Operations & Project Management",
+      keywords: ["Project Management", "Power BI", "Data Visualization", "Team Coordination", "Microsoft Office", "Operations"]
     },
     {
-      situation: "Organization required a modern full-stack application with database integration and CRUD operations for managing person data",
-      task: "Build a production-ready Person App with complete database integration, API endpoints, and modern UI using the latest web technologies",
+      situation: "Diginnovators needed scalable web applications with modern UI components and seamless user experience",
+      task: "Build and maintain dynamic web applications using modern frameworks with focus on responsive design and performance",
       action: [
-        "Developed full-stack application using Next.js 15 with App Router architecture",
-        "Implemented Prisma ORM for type-safe database operations",
-        "Configured Vercel Neon Postgres for scalable cloud database",
-        "Created RESTful API routes for complete CRUD functionality",
-        "Built responsive UI components with React 19 and Tailwind CSS",
-        "Implemented form validation and error handling",
-        "Set up development and production environments",
-        "Deployed to Vercel with continuous integration"
+        "Built dynamic web applications using React.js, Next.js, and JavaScript",
+        "Designed reusable UI components with Tailwind CSS and Material UI for scalability",
+        "Created wireframes and prototypes in Figma",
+        "Translated Figma designs into responsive front-end solutions",
+        "Integrated RESTful APIs for data-driven features",
+        "Optimized front-end performance for seamless user experience",
+        "Worked with SQL databases for reporting features",
+        "Collaborated in Agile sprints, resolving production issues"
       ],
-      result: "Delivered a robust full-stack application with 100% functional CRUD operations, type-safe database queries, and modern user interface, successfully deployed to production with zero downtime",
-      category: "Full-Stack Development",
-      keywords: ["Next.js", "Prisma", "PostgreSQL", "CRUD", "Full-Stack", "TypeScript", "API Development"]
+      result: "Successfully delivered multiple scalable web applications with optimized performance, modern UI components, and seamless API integrations, contributing to improved user satisfaction and application reliability",
+      category: "Full-Stack Web Development",
+      keywords: ["React.js", "Next.js", "JavaScript", "Tailwind CSS", "Material UI", "Figma", "SQL", "REST APIs", "Agile"]
     },
     {
-      situation: "Application needed secure authentication to protect user data and implement role-based access control",
-      task: "Implement enterprise-grade authentication system with OAuth support and session management",
+      situation: "Aisthetic needed to launch Buzzplosion, the first-ever South Indian celebrity website, requiring robust frontend and e-commerce features",
+      task: "Develop and launch celebrity platform with e-commerce functionality, responsive UI, and state management",
       action: [
-        "Integrated Auth.js (NextAuth.js) for authentication framework",
-        "Configured OAuth providers (Google, GitHub) for social login",
-        "Implemented secure session management with JWT tokens",
-        "Created protected routes and middleware for authorization",
-        "Developed user profile management features",
-        "Set up environment configuration for multiple OAuth providers",
-        "Implemented logout and session refresh functionality",
-        "Added security best practices including CSRF protection"
+        "Developed Buzzplosion platform using React.js and Tailwind CSS",
+        "Built e-commerce features with responsive UI design",
+        "Integrated secure API connections for payment and user management",
+        "Implemented Redux for state management to improve maintainability",
+        "Optimized application performance and load times",
+        "Collaborated with designers using Figma for pixel-perfect implementation",
+        "Conducted testing and bug fixes before launch",
+        "Delivered user-friendly interface with modern design patterns"
       ],
-      result: "Established secure authentication system supporting multiple OAuth providers, protecting sensitive routes, and providing seamless user experience with enterprise-level security compliance",
-      category: "Security & Authentication",
-      keywords: ["Auth.js", "OAuth", "Security", "Session Management", "Authentication", "Authorization"]
+      result: "Successfully launched Buzzplosion as the first South Indian celebrity website, achieving smooth e-commerce functionality, excellent user experience, and positive user feedback on UI/UX design",
+      category: "Frontend Development & E-commerce",
+      keywords: ["React.js", "Tailwind CSS", "Redux", "E-commerce", "Figma", "State Management", "Responsive Design"]
     },
     {
-      situation: "Needed to enable AI agents to interact with web applications through standardized protocol",
-      task: "Develop and deploy MCP (Model Context Protocol) server for AI agent communication and CRUD operations",
+      situation: "Smartstream Technologies required responsive web applications with interactive interfaces and database integration",
+      task: "Design and develop responsive web applications translating UI/UX designs into functional interfaces with API and database integration",
       action: [
-        "Studied MCP protocol specification and best practices",
-        "Developed custom MCP server with TypeScript",
-        "Implemented CRUD operation handlers for Person App integration",
-        "Created tool definitions for AI agent interactions",
-        "Set up local development environment with Claude Desktop integration",
-        "Configured server communication protocols and error handling",
-        "Documented API endpoints and tool usage",
-        "Deployed server with monitoring and logging capabilities"
+        "Designed responsive web applications using React.js, JavaScript, HTML5, CSS3",
+        "Translated Figma UI/UX designs into interactive front-end interfaces",
+        "Integrated REST APIs for complete application functionality",
+        "Connected SQL Server databases for data management",
+        "Conducted thorough code reviews for quality assurance",
+        "Performed debugging and optimization for performance improvements",
+        "Collaborated with backend team for seamless integration",
+        "Implemented component-driven architecture for reusability"
       ],
-      result: "Successfully built and deployed functional MCP server enabling AI agents to perform CRUD operations, demonstrating seamless integration between Claude Desktop and web applications",
-      category: "MCP Server Development",
-      keywords: ["MCP", "AI Agents", "Protocol Development", "Claude Desktop", "Server Development", "Integration"]
-    },
-    {
-      situation: "Project required professional deployment with monitoring, scalability, and 24/7 availability for recruiter interactions",
-      task: "Deploy Digital Twin RAG system to production with enterprise-grade reliability and monitoring",
-      action: [
-        "Configured Vercel deployment with environment variables",
-        "Set up continuous deployment pipeline with GitHub integration",
-        "Implemented error tracking and logging systems",
-        "Configured database connections for production environment",
-        "Optimized build process for faster deployment",
-        "Set up custom domain and SSL certificates",
-        "Implemented performance monitoring and analytics",
-        "Created documentation for deployment procedures"
-      ],
-      result: "Achieved 24/7 production deployment with 99.9% uptime, automated deployment pipeline, comprehensive monitoring, and professional presentation suitable for recruiter demonstrations",
-      category: "DevOps & Deployment",
-      keywords: ["Vercel", "Deployment", "CI/CD", "Monitoring", "Production", "DevOps"]
-    },
-    {
-      situation: "Development workflow needed optimization using AI-powered tools to increase productivity and code quality",
-      task: "Master AI-assisted development workflow using GitHub Copilot, Claude Desktop, and VS Code",
-      action: [
-        "Configured VS Code Insider with GitHub Copilot integration",
-        "Set up Claude Desktop with MCP server connections",
-        "Learned 'vibe coding' techniques with v0.dev for UI generation",
-        "Implemented AI-assisted code review and debugging practices",
-        "Created efficient prompt engineering strategies",
-        "Integrated AI tools into daily development workflow",
-        "Documented best practices for AI-assisted development",
-        "Trained team members on AI tool usage"
-      ],
-      result: "Increased development productivity by 40% through effective AI tool integration, improved code quality with AI-powered reviews, and established best practices for AI-assisted development workflow",
-      category: "AI-Enhanced Development",
-      keywords: ["GitHub Copilot", "Claude Desktop", "AI Tools", "Productivity", "VS Code", "Development Workflow"]
+      result: "Delivered high-quality responsive web applications with optimized performance, seamless API integrations, and maintainable codebase, receiving recognition for code quality and attention to detail",
+      category: "Frontend & Solution Development",
+      keywords: ["React.js", "JavaScript", "HTML5", "CSS3", "Figma", "REST APIs", "SQL Server", "Code Review"]
     }
   ],
 
   achievements: [
-    "Built and deployed 5+ production-ready AI applications in 10-week program",
-    "Implemented comprehensive RAG system with 95%+ accuracy in professional queries",
-    "Developed custom MCP server enabling AI agent interactions",
-    "Achieved enterprise-grade security with OAuth authentication",
-    "Created professional portfolio with integrated AI capabilities",
-    "Mastered modern full-stack development with latest frameworks (Next.js 15, React 19)"
+    "Led operations for solar project teams with data visualization using Power BI",
+    "Built and launched Buzzplosion - first South Indian celebrity website",
+    "Delivered multiple scalable web applications using React.js and Next.js",
+    "Created reusable UI component libraries with Tailwind CSS and Material UI",
+    "Translated 50+ Figma designs into responsive front-end interfaces",
+    "Optimized application performance resulting in improved load times",
+    "Collaborated successfully in Agile teams across multiple projects"
   ],
 
   certifications: [
-    "AI Agent Developer - Full-Stack AI Development Certification (2025)",
-    "Advanced RAG System Implementation",
-    "MCP Protocol Specialist",
-    "Enterprise Authentication & Security"
+    "Bachelor of Technology in Computer Science (89.03%)"
+  ],
+
+  interests: [
+    "Exploring new technology",
+    "Literature",
+    "Environmental Conservation",
+    "Art",
+    "Yoga",
+    "Skiing",
+    "Travel"
   ]
 };
 
