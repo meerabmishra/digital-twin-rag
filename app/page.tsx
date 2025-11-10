@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Brain, User, Github, TestTube, Database } from 'lucide-react';
+import { Brain, User, Github, TestTube, Database, Upload } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -23,6 +23,9 @@ export default function Home() {
               </Link>
               <Link href="/profile-data" className="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 px-3 py-2 rounded-md text-sm font-medium">
                 Profile Data
+              </Link>
+              <Link href="/migrate-resume" className="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 px-3 py-2 rounded-md text-sm font-medium">
+                Migrate Resume
               </Link>
             </div>
           </div>
@@ -50,6 +53,19 @@ export default function Home() {
             </p>
             <Link href="/chat" className="inline-block bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-700 transition">
               Start Chat
+            </Link>
+          </div>
+
+          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+            <div className="flex items-center mb-4">
+              <Upload className="h-8 w-8 text-blue-600 mr-3" />
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Resume Migration</h2>
+            </div>
+            <p className="text-gray-600 dark:text-gray-300 mb-4">
+              Convert your JSON resume to vector embeddings and upload to the database
+            </p>
+            <Link href="/migrate-resume" className="inline-block bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition">
+              Migrate Now
             </Link>
           </div>
 
